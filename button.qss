@@ -1,0 +1,15 @@
+QPushButton {
+    border: none;
+    outline: none;
+    padding: none;
+    /*background: url("ringsaverSYSTEM.jpg");*/
+    /*background-position: top center;*/
+    /*background-repeat: none;*/
+    
+}
+
+QPushButton:hover {
+    border: none;
+    outline: none;
+    background: red;
+}
