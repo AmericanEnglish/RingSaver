@@ -1,15 +1,67 @@
-QPushButton {
-    border: none;
-    outline: none;
-    padding: none;
-    /*background: url("ringsaverSYSTEM.jpg");*/
-    /*background-position: top center;*/
-    /*background-repeat: none;*/
-    
-}
+QPushButton[accessibleName="BackupFileButton"] {{
+    border-image: url("{base_path}/images/ringsaveFILE.jpg") 0 0 0 0 stretch stretch;
+    margin=0px;
+    border=0px;
+    padding=0px;
+    width: 143px;
+    height: 147px;
+}}
 
-QPushButton:hover {
-    border: none;
-    outline: none;
-    background: red;
-}
+QPushButton[accessibleName="BackupFileButton"]:hover {{
+    border-image: url("{base_path}/images/ringsaveFILE_hi.jpg") 0 0 0 0 stretch stretch;
+    margin=0px;
+    border=0px;
+    padding=0px;
+    width: 143px;
+    height: 147px;
+}}
+
+QPushButton[accessibleName="BackupLocation"] {{
+    border-image: url("{base_path}/images/ringsaveLOCATION.jpg") 0 0 0 0 stretch stretch;
+    margin=0px;
+    border=0px;
+    padding=0px;
+    width: 143px;
+    height: 147px;
+}}
+
+QPushButton[accessibleName="BackupLocation"]:hover {{
+    border-image: url("{base_path}/images/ringsaveLOCATION_hi.jpg") 0 0 0 0 stretch stretch;
+    background-position: top center;
+    background-repeat: none;
+}}
+
+QPushButton[accessibleName="OptionsButton"] {{
+    border-image: url("{base_path}/images/ringsaveOPTIONS.jpg") 0 0 0 0 stretch stretch;
+    margin=0px;
+    border=0px;
+    padding=0px;
+    width: 143px;
+    height: 147px;
+}}
+
+QPushButton[accessibleName="OptionsButton"]:hover {{
+    border-image: url("{base_path}/images/ringsaveOPTIONS_hi.jpg") 0 0 0 0 stretch stretch;
+    margin=0px;
+    border=0px;
+    padding=0px;
+    width: 143px;
+    height: 147px;
+}}
+
+QPushButton[accessibleName="StartButton"] {{
+    border-image: url("{base_path}/images/ringsaveLOCATION.jpg") 0 0 0 0 stretch stretch;
+    margin=0px;
+    border=0px;
+    padding=0px;
+    width: 143px;
+    height: 147px;
+}}
+
+QPushButton[accessibleName="StartButton"]:hover {{
+    border-image: url("{base_path}/images/ringsaveLOCATION_hi.jpg") 0 0 0 0 stretch stretch;
+    background-position: top center;
+    background-repeat: none;
+}}
+
+

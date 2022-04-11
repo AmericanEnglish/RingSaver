@@ -1,0 +1,9 @@
+QWidget[accessibleName="MainWindow"] {
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+QHeaderView::section {
+    background-color: rgb(32, 32, 32);
+    color: white;
+}

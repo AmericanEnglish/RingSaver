@@ -1,0 +1,14 @@
+QTableWidget[accessibleName="LogWindow"] {
+    /*background: url("images/ringsaverLOG.jpg")*/
+    background-color: rgb(32, 32, 32);
+}
+
+QHeaderView::section {
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+QTableWidget::item {
+
+    color:white
+}

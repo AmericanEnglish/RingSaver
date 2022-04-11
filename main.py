@@ -9,14 +9,34 @@ from PyQt5.QtCore import Qt, QTimer
 import shutil
 from datetime import datetime
 
+import platform
+
+try:
+    import sys
+    base_path = sys._MEIPASS
+except:
+    base_path = "."
+
+from pathlib import Path
+
 class MainWindow(QWidget):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
+        self.setAccessibleName("MainWindow")
+
+        with open(base_path / Path("mainwindow.qss"), "r") as windowStyle:
+            self.setStyleSheet(windowStyle.read())
 
         self.setWindowTitle("RingSaver")
 
-        with open("button.qss", 'r') as infile:
+        with open(base_path / Path("button.qss"), 'r') as infile:
             buttonStyle = infile.read()
+        buttonStyle = buttonStyle.format(base_path=base_path)
+
+        # There has to be a better way....
+        if platform.system() == "Windows":
+            buttonStyle = buttonStyle.replace("\\", "/")
+        print(buttonStyle)
         self.buttonSpace = QHBoxLayout(self)
         self.bodySpace   = QVBoxLayout(self)
         
@@ -24,16 +44,21 @@ class MainWindow(QWidget):
         self.backupLocation = None
 
         # Choose file to backup
-        backupFileButton     = QPushButton("Choose File To Backup", self)
+        # backupFileButton     = QPushButton("Choose File To Backup", self)
+        backupFileButton     = QPushButton("", self)
+        backupFileButton.setAccessibleName("BackupFileButton")
         backupFileButton.clicked.connect(self.getBackedFile)
         backupFileButton.setStyleSheet(buttonStyle)
 
         backupFileText   = QLineEdit("")
+        print(backupFileButton.size())
         
         # Choose backup location
-        backupLocButton = QPushButton("Choose Backup Location", self)
+        # backupLocButton = QPushButton("Choose Backup Location", self)
+        backupLocButton = QPushButton("", self)
         backupLocButton.clicked.connect(self.getBackedLoc)
         backupLocText = QLineEdit("")
+        backupLocButton.setAccessibleName("BackupLocation")
         backupLocButton.setStyleSheet(buttonStyle)
 
         # Backup Timer
@@ -59,20 +84,28 @@ class MainWindow(QWidget):
         self.logTable.verticalHeader().setVisible(False)
         self.logTable.setTextElideMode(Qt.ElideRight)
         self.logTable.setWordWrap(True)
+        self.logTable.setAccessibleName("LogWindow")
+        with open(base_path / Path("log.qss"), 'r') as logstyle:
+            self.logTable.setStyleSheet(logstyle.read())
 
         # Options
-        optionsButton = QPushButton("Options", self)
+        # optionsButton = QPushButton("Options", self)
+        optionsButton = QPushButton("", self)
         optionsButton.clicked.connect(self.openOptions)
+        optionsButton.setAccessibleName("OptionsButton")
         optionsButton.setStyleSheet(buttonStyle)
 
         # Start Button
-        startButton = QPushButton("Start", self)
+        # startButton = QPushButton("Start", self)
+        startButton = QPushButton("", self)
         startButton.clicked.connect(self.createTimer)
+        startButton.setAccessibleName("StartButton")
         startButton.setStyleSheet(buttonStyle)
         
         self.cTimer = None
 
         # row, column, height, width             r, c, h, w 
+        self.buttonSpace.setSpacing(0)
         self.buttonSpace.addWidget(backupFileButton)
         self.buttonSpace.addWidget(backupLocButton)
         self.buttonSpace.addWidget(backupIntervalButton)
