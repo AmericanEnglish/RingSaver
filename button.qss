@@ -16,6 +16,16 @@ QPushButton[accessibleName="BackupFileButton"]:hover {{
     height: 147px;
 }}
 
+QPushButton[accessibleName="BackupFileButton"]:pressed {{
+    border-image: url("{base_path}/images/ringsaveFILE_dim.jpg") 0 0 0 0 stretch stretch;
+    margin=0px;
+    border=0px;
+    padding=0px;
+    width: 143px;
+    height: 147px;
+}}
+
+
 QPushButton[accessibleName="BackupLocation"] {{
     border-image: url("{base_path}/images/ringsaveLOCATION.jpg") 0 0 0 0 stretch stretch;
     margin=0px;
@@ -27,6 +37,12 @@ QPushButton[accessibleName="BackupLocation"] {{
 
 QPushButton[accessibleName="BackupLocation"]:hover {{
     border-image: url("{base_path}/images/ringsaveLOCATION_hi.jpg") 0 0 0 0 stretch stretch;
+    background-position: top center;
+    background-repeat: none;
+}}
+
+QPushButton[accessibleName="BackupLocation"]:pressed {{
+    border-image: url("{base_path}/images/ringsaveLOCATION_dim.jpg") 0 0 0 0 stretch stretch;
     background-position: top center;
     background-repeat: none;
 }}
@@ -48,6 +64,17 @@ QPushButton[accessibleName="OptionsButton"]:hover {{
     width: 143px;
     height: 147px;
 }}
+
+QPushButton[accessibleName="OptionsButton"]:pressed {{
+    border-image: url("{base_path}/images/ringsaveOPTIONS_dim.jpg") 0 0 0 0 stretch stretch;
+    margin=0px;
+    border=0px;
+    padding=0px;
+    width: 143px;
+    height: 147px;
+}}
+
+
 
 QPushButton[accessibleName="StartButton"] {{
     border-image: url("{base_path}/images/ringsaveLOCATION.jpg") 0 0 0 0 stretch stretch;
